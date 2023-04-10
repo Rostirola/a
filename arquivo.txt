@@ -1,0 +1,4 @@
+P;Pedido 1; false;Juan;123456789;22;juan@gmail.com;true;
+S;5;misto;1;casquinha;300;true
+M;5;morango;3;500;true;false
+B;12;cola;1;cocacola;500;false

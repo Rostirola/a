@@ -1,0 +1,3 @@
+Cliente Um;11223344556;10;um@cliente.com;
+Cliente Dois;67788990010;20;dois@cliente.com;
+Cliente Tres;10202030304;30;tres@cliente.com;
