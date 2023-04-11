@@ -20,7 +20,7 @@ public class BebidaController {
 
 	private String msg;
 
-	@GetMapping(value = "/bebida")
+	@GetMapping(value = "/bebida/cadastro")
 	public String telaCadastro() {
 		return "bebida/cadastro";
 	}	

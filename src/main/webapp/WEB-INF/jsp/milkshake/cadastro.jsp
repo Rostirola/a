@@ -14,8 +14,6 @@
 	
 		<form action="/milkshake/incluir" method="post">
 			<h3>Cadastro de Milkshakes</h3>
-		
-			<c:import url="/WEB-INF/jsp/alimento/cadastro.jsp"/>
 			
 			<div class="form-group">
 				<label>Características:</label>

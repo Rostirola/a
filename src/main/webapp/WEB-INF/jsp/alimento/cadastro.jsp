@@ -14,8 +14,6 @@
 	
 		<form action="/alimento/incluir" method="post">
 			<h3>Cadastro de Alimentos</h3>
-		
-			<c:import url="/WEB-INF/jsp/alimento/cadastro.jsp"/>
 
             <div class="form-group">
                 <label>Preco:</label> 	

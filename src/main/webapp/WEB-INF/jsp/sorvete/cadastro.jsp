@@ -14,8 +14,6 @@
 	
 		<form action="/sorvete/incluir" method="post">
 			<h3>Cadastro de Sorvetes</h3>
-		
-			<c:import url="/WEB-INF/jsp/produto/cadastro.jsp"/>
 			
 			<div class="form-group">
 				<label>Características:</label>

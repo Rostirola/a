@@ -20,8 +20,8 @@
 			</div>		
 		</c:if>
 
-		<form action="/bebida" method="get">
-			<button type="submit">Novo</button>
+		<form action="/bebida/cadastro">
+			<input type="submit" value="novo"/>
 		</form>
 		
 		<c:if test="${empty bebidas}">
