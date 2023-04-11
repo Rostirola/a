@@ -2,15 +2,7 @@ package br.edu.infnet.appsorvete.model.domain;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "TUsuario")
@@ -28,13 +20,13 @@ public class Usuario {
 	private int idade;
 	private float salario;
 	private boolean func;
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "idUsuario")
 	private List<Cliente> clientes;
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "idUsuario")
 	private List<Alimento> alimentos;
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "idUsuario")
 	private List<Pedido> pedidos;
 	@OneToOne(cascade = CascadeType.PERSIST) 

@@ -68,7 +68,7 @@
 							<td>${u.clientes.size()}</td>
 				    		<td>${u.alimentos.size()}</td>
 							<td>${u.pedidos.size()}</td>				      
-							<c:if test="${usuario.admin}">
+							<c:if test="${usuario.func}">
 							<td><a href="/usuario/${u.id}/excluir">excluir</a></td>
 							</c:if>
 							</tr>
