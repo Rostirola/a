@@ -14,13 +14,13 @@ public class Milkshake extends Alimento {
 	private boolean especial;
 	private boolean chantily;
 
-	public Milkshake() {
-
-	}
+	public Milkshake() { super(); }
 	
-	public Milkshake(float preco, String sabor, int quantidade, int tamanho) throws PrecoZeradoException {
-		super(preco, sabor, quantidade);
+	public Milkshake(String nome, float preco, String sabor, int quantidade, int tamanho, boolean especial, boolean chantily) throws PrecoZeradoException {
+		super(nome, preco, sabor, quantidade);
 		this.tamanho = tamanho;
+		this.especial = especial;
+		this.chantily = chantily;
 	}
 	
 	@Override
@@ -37,41 +37,38 @@ public class Milkshake extends Alimento {
 		return getPreco() + valorEspecial + valorTamanho + valorChantily;
 	}
 	
+	public int		getTamanho() {
+		return tamanho;
+	}
+	public void		setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
+	public boolean	isEspecial() {
+		return especial;
+	}
+	public void		setEspecial(boolean especial) {
+		this.especial = especial;
+	}
+	public boolean	isChantily() {
+		return chantily;
+	}
+	public void		setChantily(boolean chantily) {
+		this.chantily = chantily;
+	}
+
 	@Override
 	public String toString() {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
 		sb.append(";");
-		sb.append(especial ? "especial=S" : "especial=N");
-		sb.append(";");
 		sb.append(tamanho);
+		sb.append(";");
+		sb.append(especial ? "especial=S" : "especial=N");
 		sb.append(";");
 		sb.append(chantily ? "chantily=S" : "chantily=N");
 		sb.append(";");
-		
+
 		return sb.toString();
 	}
-	
-	public int getTamanho() {
-		return tamanho;
-	}
-	public void setTamanho(int tamanho) {
-		this.tamanho = tamanho;
-	}
-	public boolean isEspecial() {
-		return especial;
-	}
-	public void setEspecial(boolean especial) {
-		this.especial = especial;
-	}
-	public boolean isChantily() {
-		return chantily;
-	}
-	public void setChantily(boolean chantily) {
-		this.chantily = chantily;
-	}
-	
-	
-	
 }

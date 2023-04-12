@@ -15,7 +15,8 @@
 		<form action="/bebida/incluir" method="post">
 			<h3>Cadastro de Bebidas</h3>
 
-			
+			<c:import url="/WEB-INF/jsp/alimento/cadastro.jsp"/>
+
 			<div class="form-group">
 				<label>Características:</label>
 			    <div class="form-check">

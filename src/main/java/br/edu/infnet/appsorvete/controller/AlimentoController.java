@@ -13,7 +13,7 @@ import br.edu.infnet.appsorvete.model.service.AlimentoService;
 
 @Controller
 public class AlimentoController {
-	
+
 	@Autowired
 	private AlimentoService alimentoService;
 
@@ -21,11 +21,11 @@ public class AlimentoController {
 
 	@GetMapping(value = "/alimento/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
-		
+
 		model.addAttribute("alimentos", alimentoService.obterLista(usuario));
 
 		model.addAttribute("mensagem", msg);
-		
+
 		msg = null;
 
 		return "alimento/lista";
@@ -35,13 +35,13 @@ public class AlimentoController {
 	public String excluir(@PathVariable Integer id) {
 
 		Alimento alimento = alimentoService.obterPorId(id);
-		
+
 		try {
 			alimentoService.excluir(id);
 
-			msg = "A exclusão do alimento "+alimento.getId()+" foi realizada com sucesso!!!";
+			msg = "A exclusão do alimento "+alimento.getNome()+" foi realizada com sucesso!!!";
 		} catch (Exception e) {
-			msg = "Impossível realizar a exclusão do alimento "+alimento.getId()+"!!!";
+			msg = "Impossível realizar a exclusão do alimento "+alimento.getNome()+"!!!";
 		}
 
 		return "redirect:/alimento/lista";

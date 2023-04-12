@@ -37,7 +37,7 @@ public class AcessoController {
 			return "redirect:/home";
 		}
 
-		model.addAttribute("mensagem", "As credenciais para o email " + email + " estão incorretas!");
+		model.addAttribute("mensagem", "Credenciais incorretas!");
 		
 		return telaLogin();
 	}

@@ -44,7 +44,7 @@ public class MilkshakeController {
 
 		milkshakeService.incluir(milkshake);
 		
-		msg = "A inclusão da milkshake "+milkshake.getTamanho()+" foi realizada com sucesso!!!";
+		msg = "A inclusão da milkshake "+milkshake.getNome() + milkshake.getSabor() + milkshake.getTamanho() +" foi realizada com sucesso!!!";
 		
 		return "redirect:/milkshake/lista";
 	}
@@ -57,9 +57,9 @@ public class MilkshakeController {
 		try {
 			milkshakeService.excluir(id);
 
-			msg = "A exclusão do produto "+milkshake.getTamanho()+" foi realizada com sucesso!!!";
+			msg = "A exclusão do produto "+milkshake.getNome() + milkshake.getSabor() + milkshake.getTamanho() +" foi realizada com sucesso!!!";
 		} catch (Exception e) {
-			msg = "Impossível realizar a exclusão do produto "+milkshake.getTamanho()+"!!!";
+			msg = "Impossível realizar a exclusão do produto "+milkshake.getNome() + milkshake.getSabor() + milkshake.getTamanho() +"!!!";
 		}
 
 		return "redirect:/milkshake/lista";

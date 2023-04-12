@@ -14,12 +14,13 @@ public class Sorvete extends Alimento {
 	private int tamanho;
 	private boolean tooping;
 
-	public Sorvete() {
-	}
+	public Sorvete() { super();	}
 	
-	public Sorvete(float preco, String sabor, int quantidade, String tipo) throws PrecoZeradoException {
-		super(preco, sabor, quantidade);
+	public Sorvete(String nome, float preco, String sabor, int quantidade, String tipo, int tamanho, boolean tooping) throws PrecoZeradoException {
+		super(nome, preco, sabor, quantidade);
 		this.tipo = tipo;
+		this.tamanho = tamanho;
+		this.tooping = tooping;
 	}
 	
 	@Override
@@ -33,22 +34,6 @@ public class Sorvete extends Alimento {
 		float valorTamanho = tamanho * 0.05f;
 		
 		return getPreco() + temTooping + valorTamanho;
-	}
-	
-	@Override
-	public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append(";");
-		sb.append(tipo);
-		sb.append(";");
-		sb.append(tamanho);
-		sb.append(";");
-		sb.append(tooping ? "tooping=S" : "tooping=N");
-		sb.append(";");
-		
-		return sb.toString();
 	}
 	
 	public String getTipo() {
@@ -69,6 +54,20 @@ public class Sorvete extends Alimento {
 	public void setTooping(boolean tooping) {
 		this.tooping = tooping;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append(";");
+		sb.append(tipo);
+		sb.append(";");
+		sb.append(tamanho);
+		sb.append(";");
+		sb.append(tooping ? "tooping=S" : "tooping=N");
+		sb.append(";");
+
+		return sb.toString();
+	}
 }

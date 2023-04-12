@@ -44,7 +44,7 @@ public class SorveteController {
 
 		sorveteService.incluir(sorvete);
 		
-		msg = "A inclusão da sorvete "+sorvete.getTipo()+" foi realizada com sucesso!!!";
+		msg = "A inclusão da sorvete "+sorvete.getNome()+ sorvete.getTipo() + sorvete.getSabor() + sorvete.getTamanho()+" foi realizada com sucesso!!!";
 		
 		return "redirect:/sorvete/lista";
 	}
@@ -57,9 +57,9 @@ public class SorveteController {
 		try {
 			sorveteService.excluir(id);
 
-			msg = "A exclusão do produto "+sorvete.getTipo()+" foi realizada com sucesso!!!";
+			msg = "A exclusão do produto "+sorvete.getNome()+ sorvete.getTipo() + sorvete.getSabor() + sorvete.getTamanho()+" foi realizada com sucesso!!!";
 		} catch (Exception e) {
-			msg = "Impossível realizar a exclusão do produto "+sorvete.getTipo()+"!!!";
+			msg = "Impossível realizar a exclusão do produto "+sorvete.getNome()+ sorvete.getTipo() + sorvete.getSabor() + sorvete.getTamanho()+"!!!";
 		}
 
 		return "redirect:/sorvete/lista";

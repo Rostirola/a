@@ -20,10 +20,8 @@ public class BebidaController {
 
 	private String msg;
 
-	@GetMapping(value = "/bebida/cadastro")
-	public String telaCadastro() {
-		return "bebida/cadastro";
-	}	
+	@GetMapping(value = "/bebida")
+	public String telaCadastro() { return "bebida/cadastro"; }
 
 	@GetMapping(value = "/bebida/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
@@ -44,7 +42,7 @@ public class BebidaController {
 
 		bebidaService.incluir(bebida);
 		
-		msg = "A inclusão da bebida "+bebida.getMarca()+" foi realizada com sucesso!!!";
+		msg = "A inclusão da bebida "+bebida.getNome() + bebida.getMarca() + bebida.getSabor() + bebida.getTamanho()+" foi realizada com sucesso!!!";
 		
 		return "redirect:/bebida/lista";
 	}
@@ -57,9 +55,9 @@ public class BebidaController {
 		try {
 			bebidaService.excluir(id);
 
-			msg = "A exclusão do produto "+bebida.getMarca()+" foi realizada com sucesso!!!";
+			msg = "A exclusão do produto "+bebida.getNome() + bebida.getMarca() + bebida.getSabor() + bebida.getTamanho()+" foi realizada com sucesso!!!";
 		} catch (Exception e) {
-			msg = "Impossível realizar a exclusão do produto "+bebida.getMarca()+"!!!";
+			msg = "Impossível realizar a exclusão do produto "+bebida.getNome() + bebida.getMarca() + bebida.getSabor() + bebida.getTamanho()+"!!!";
 		}
 
 		return "redirect:/bebida/lista";

@@ -15,13 +15,13 @@ public class Bebida extends Alimento {
 	private float tamanho;
 	private boolean alcoolico;
 
-	public Bebida() {
-
-	}
+	public Bebida() { super(); }
 	
-	public Bebida(float preco, String sabor, int quantidade, String marca) throws PrecoZeradoException {
-		super(preco, sabor, quantidade);
+	public Bebida(String nome, float preco, String sabor, int quantidade, String marca, float tamanho, boolean alcoolico) throws PrecoZeradoException {
+		super(nome, preco, sabor, quantidade);
 		this.marca = marca;
+		this.tamanho = tamanho;
+		this.alcoolico = alcoolico;
 	}
 	
 	@Override
@@ -37,6 +37,25 @@ public class Bebida extends Alimento {
 		return getPreco() + valorAlcoolico + valorTamanho;
 	}
 	
+	public String	getMarca() {
+		return marca;
+	}
+	public void		setMarca(String marca) {
+		this.marca = marca;
+	}
+	public float	getTamanho() {
+		return tamanho;
+	}
+	public void		setTamanho(int tamanho) {
+		this.tamanho = tamanho;
+	}
+	public boolean	isAlcoolico() {
+		return alcoolico;
+	}
+	public void		setAlcoolico(boolean alcoolico) {
+		this.alcoolico = alcoolico;
+	}
+
 	@Override
 	public String toString() {
 
@@ -49,31 +68,7 @@ public class Bebida extends Alimento {
 		sb.append(";");
 		sb.append(alcoolico ? "cerveja" : "refri");
 		sb.append(";");
-		
+
 		return sb.toString();
 	}
-	
-	public String getMarca() {
-		return marca;
-	}
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-	public float getTamanho() {
-		return tamanho;
-	}
-	public void setTamanho(int tamanho) {
-		this.tamanho = tamanho;
-	}
-	public boolean isAlcoolico() {
-		return alcoolico;
-	}
-	public void setAlcoolico(boolean alcoolico) {
-		this.alcoolico = alcoolico;
-	}
-
-	
-	
-	
-	
 }
