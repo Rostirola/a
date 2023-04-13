@@ -31,7 +31,7 @@
 			
 			<div class="form-group">
 				<label>Senha:</label>
-				<input type="password" name="senha" value="10vinte30QUARENTA" class="form-control">
+				<input type="password" name="senha" value="123" class="form-control">
 			</div>
 			
 			<div class="form-group">
@@ -46,7 +46,7 @@
 
 			<div class="form-group">
 				<label>Salario:</label> 	
-				<input type="text" name="salario" value="1640,00" class="form-control">
+				<input type="text" name="salario" value="1640" class="form-control">
 			</div>
 
 			<div class="form-group">

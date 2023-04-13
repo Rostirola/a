@@ -18,7 +18,7 @@
 			<c:import url="/WEB-INF/jsp/alimento/cadastro.jsp"/>
 
 			<div class="form-group">
-				<label>Características:</label>
+				<label>Alcoolico:</label>
 			    <div class="form-check">
 			      <label class="form-check-label">
 			        <input type="checkbox" name="alcoolico" value="true" class="form-check-input" > Alcoolico
@@ -33,7 +33,7 @@
 			
 			<div class="form-group">
 				<label>Marca:</label> 	
-				<input type="text" name="marca" value="ccooffee" class="form-control">
+				<input type="text" name="marca" value="Coca" class="form-control">
 			</div>
 
 			<button type="submit">Cadastrar</button>

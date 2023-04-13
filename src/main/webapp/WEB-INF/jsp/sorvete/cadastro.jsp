@@ -14,25 +14,36 @@
 	
 		<form action="/sorvete/incluir" method="post">
 			<h3>Cadastro de Sorvetes</h3>
+
+			<c:import url="/WEB-INF/jsp/alimento/cadastro.jsp"/>
 			
 			<div class="form-group">
-				<label>Características:</label>
+				<label>Tipo:</label>
 			    <div class="form-check">
 			      <label class="form-check-label">
-			        <input type="radio" name="casquinha" value="casquinha" class="form-check-input" > Casquinha
+			        <input type="radio" name="Tipo" value="casquinha" class="form-check-input" > Casquinha
 			      </label>
 			    </div>
 				<div class="form-check">
 					<label class="form-check-label">
-					  <input type="radio" name="cascao" value="cascao" class="form-check-input" > Cascao
+					  <input type="radio" name="Tipo" value="cascao" class="form-check-input" > Cascao
 					</label>
 				  </div>
 				  <div class="form-check">
 					<label class="form-check-label">
-					  <input type="radio" name="copo" value="copo" class="form-check-input" > Copo
+					  <input type="radio" name="Tipo" value="copo" class="form-check-input" > Copo
 					</label>
 				  </div>
 			</div>
+
+			<div class="form-group">
+                <label>Tooping:</label>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" name="tooping" value="true" class="form-check-input" > Tooping
+                  </label>
+                </div>
+            </div>
 			
 			<div class="form-group">
 				<label>Tamanho:</label> 	

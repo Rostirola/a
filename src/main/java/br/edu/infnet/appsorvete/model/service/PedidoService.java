@@ -3,6 +3,7 @@ package br.edu.infnet.appsorvete.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appsorvete.model.domain.Pedido;
@@ -28,7 +29,7 @@ public class PedidoService {
 	}
 	
 	public Collection<Pedido> obterLista(Usuario usuario){
-		return (Collection<Pedido>) pedidoRepository.obterLista(usuario.getId());
+		return (Collection<Pedido>) pedidoRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC, "data"));
 	}
 
 	public Pedido obterPorId(Integer id) {

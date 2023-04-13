@@ -10,7 +10,6 @@ import br.edu.infnet.appsorvete.model.exceptions.TamanhoBebidaInvalidoException;
 @Table(name = "TBebida")
 public class Bebida extends Alimento {
 
-	
 	private String marca;
 	private float tamanho;
 	private boolean alcoolico;

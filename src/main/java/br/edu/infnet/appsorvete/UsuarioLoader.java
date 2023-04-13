@@ -25,28 +25,12 @@ public class UsuarioLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
-		Cliente cliente = new Cliente();
-		cliente.setId(1);
-		Cliente cliente2 = new Cliente();
-		cliente.setId(2);
-		Cliente cliente3 = new Cliente();
-		cliente.setId(3);
-
-		List<Cliente> clientes = new ArrayList<Cliente>();
-		clientes.add(cliente);
-		clientes.add(cliente2);
-		clientes.add(cliente3);
-
-
-
-		
 		Usuario userFunc = new Usuario("Funcionario ", "func@func.com", "123");
 		userFunc.setIdade(99);
 		userFunc.setSalario(9999);
 		userFunc.setSetor("Producao");
 		userFunc.setTipo("Func");
 		userFunc.setFunc(true);
-		//userFunc.setClientes(clientes);
 
 		usuarioService.incluir(userFunc);
 		
@@ -58,7 +42,6 @@ public class UsuarioLoader implements ApplicationRunner {
 			usuario.setSalario(i*100);
 			usuario.setSetor("Presidência " + i);
 			usuario.setTipo("Func " + i);
-			//userFunc.setClientes(clientes);
 
 			usuarioService.incluir(usuario);
 			

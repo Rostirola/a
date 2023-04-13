@@ -13,27 +13,21 @@ public class AlimentoTest {
 	public static void main(String[] args) {
 
 		try {
-			Bebida b1 = new Bebida(12, "cola", 1, "cocacola");
-			b1.setTamanho(500);
-			b1.setAlcoolico(false);
+			Bebida b1 = new Bebida("Bebida", 5, "cola", 1, "coca", 500, false);
 			System.out.println(b1);
 			System.out.println("Valor da Venda = R$" + b1.calcularValorVenda());
 		} catch (TamanhoBebidaInvalidoException | PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
 		}
 		try {
-			Milkshake m1 = new Milkshake(0, "morango", 3, 500);
-			m1.setEspecial(false);
-			m1.setChantily(true);
+			Milkshake m1 = new Milkshake("Milkshake", 5, "morango", 3, 500, false, true);
 			System.out.println(m1);
 			System.out.println("Valor da Venda = R$" + m1.calcularValorVenda());
 		} catch (PrecoZeradoException | TamanhoMilkshakeInvalidoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
 		}
 		try {
-			Sorvete s1 = new Sorvete(5, "misto", 1, "casquinha");
-			s1.setTamanho(300);
-			s1.setTooping(true);
+			Sorvete s1 = new Sorvete("Sorvete", 5, "misto", 1, "casquinha", 300, true);
 			System.out.println(s1);
 			System.out.println("Valor da Venda = R$" + s1.calcularValorVenda());
 		} catch (PrecoZeradoException | TamanhoSorveteInvalidoException e) {

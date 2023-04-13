@@ -1,5 +1,6 @@
 package br.edu.infnet.appsorvete;
  
+import br.edu.infnet.appsorvete.model.domain.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -12,6 +13,10 @@ import br.edu.infnet.appsorvete.model.exceptions.TamanhoBebidaInvalidoException;
 import br.edu.infnet.appsorvete.model.exceptions.PrecoZeradoException;
 import br.edu.infnet.appsorvete.model.service.BebidaService;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 @Order(5)
 @Component
 public class BebidaLoader implements ApplicationRunner {
@@ -21,57 +26,51 @@ public class BebidaLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-        
-        Usuario userFunc = new Usuario();
-		userFunc.setId(1);
-	
 
-	try {
-		Bebida bebida = new Bebida(5, "Cola", 1, "Coca-cola");
-		bebida.setAlcoolico(false);
-		bebida.setTamanho(500);
-		bebida.setUsuario(userFunc);
-		System.out.println(bebida);
-		System.out.println("Valor de Venda = R$" + bebida.calcularValorVenda());
+		try {
+			String arq = "bebidas.txt";
 
-		bebidaService.incluir(bebida);
-	} catch (PrecoZeradoException | TamanhoBebidaInvalidoException e) {
-		System.out.println("[ERRO] " + e.getMessage());
-	}
+			try {
+				FileReader fileR = new FileReader(arq);
+				BufferedReader leitura = new BufferedReader(fileR);
 
-	try {
-		Bebida bebida = new Bebida(5, "Cola", 1, "Coca-cola");
-		bebida.setAlcoolico(false);
-		bebida.setTamanho(500);
-		bebida.setUsuario(userFunc);
-		System.out.println(bebida);
-		System.out.println("Valor de Venda = R$" + bebida.calcularValorVenda());
+				String linha = leitura.readLine();
+				String[] campos = null;
 
-		bebidaService.incluir(bebida);
-	} catch (PrecoZeradoException | TamanhoBebidaInvalidoException e) {
-		System.out.println("[ERRO] " + e.getMessage());
-	}
+				while(linha != null) {
 
-	try {
-		Bebida bebida = new Bebida(5, "Cola", 1, "Coca-cola");
-		bebida.setAlcoolico(false);
-		bebida.setTamanho(500);
-		System.out.println(bebida);
-		bebida.setUsuario(userFunc);
-		System.out.println("Valor de Venda = R$" + bebida.calcularValorVenda());
+					campos = linha.split(";");
 
-		bebidaService.incluir(bebida);
-	} catch (PrecoZeradoException | TamanhoBebidaInvalidoException e) {
-		System.out.println("[ERRO] " + e.getMessage());
-	}
-	
-	System.out.println("Listagem de Bebidas:");
-	for(Bebida bebida : bebidaService.obterLista()) {
-		System.out.printf("%d - %s - %s\n", 
-				bebida.getId(),
-				bebida.getSabor(),
-				bebida.getMarca()
-			);
+					Bebida bebida = new Bebida(
+							campos[0],
+							Float.parseFloat(campos[1]),
+							campos[2],
+							Integer.parseInt(campos[3]),
+							campos[4],
+							Float.parseFloat(campos[5]),
+							Boolean.parseBoolean(campos[6])
+					);
+
+					Usuario usuario = new Usuario();
+					usuario.setId(1);
+
+					bebida.setUsuario(usuario);
+
+					bebidaService.incluir(bebida);
+
+					System.out.println("A inclusão do cliente "+bebida.getNome()+" foi realizada com sucesso!!!");
+
+					linha = leitura.readLine();
+				}
+
+				leitura.close();
+				fileR.close();
+			} catch (IOException e) {
+				System.out.println("[ERRO] " + e.getMessage());
+			}
+
+		} finally {
+			System.out.println("Processamento realizado com sucesso!!!");
 		}
 	}
 

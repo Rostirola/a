@@ -17,6 +17,8 @@ public class EnderecoController {
 	@PostMapping(value = "/cep")
 	public String buscaCep(Model model, @RequestParam String cep) {
 
+		System.out.println(enderecoService.buscaPorCep(cep).getLocalidade());
+
 		model.addAttribute("endereco", enderecoService.buscaPorCep(cep));
 		
 		return "usuario/cadastro";

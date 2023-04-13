@@ -23,36 +23,28 @@ public class PedidoTest {
 		List<Alimento> alimentoP3 = new ArrayList<Alimento>();
 		
 		try {
-			Bebida b1 = new Bebida(12, "cola", 1, "cocacola");
-			b1.setTamanho(500);
-			b1.setAlcoolico(false);
+			Bebida b1 = new Bebida("Bebida", 5, "cola", 1, "coca", 500, false);
 			alimentoP1.add(b1);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
 		}
 		
 		try {
-			Bebida b2 = new Bebida(0, "chopp", 5, "brahma");
-			b2.setTamanho(473);
-			b2.setAlcoolico(true);
+			Bebida b2 = new Bebida("Bebida", 5, "cola", 1, "coca", 500, false);
 			alimentoP3.add(b2);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
 		}
 		
 		try {
-			Bebida b3 = new Bebida(-2, "laranja", 2, "schin mini");
-			b3.setTamanho(250);
-			b3.setAlcoolico(false);
+			Bebida b3 = new Bebida("Bebida", 5, "cola", 1, "coca", 500, false);
 			alimentoP2.add(b3);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
 		}
 		
 		try {
-			Milkshake m1 = new Milkshake(0, "morango", 3, 500);
-			m1.setEspecial(false);
-			m1.setChantily(true);
+			Milkshake m1 = new Milkshake("Milkshake", 5, "morango", 3, 500, false, true);
 			alimentoP2.add(m1);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
@@ -60,9 +52,7 @@ public class PedidoTest {
 		
 		
 		try {
-			Milkshake m2 = new Milkshake(-8, "napolitano", 5, 300);
-			m2.setEspecial(false);
-			m2.setChantily(true);
+			Milkshake m2 = new Milkshake("Milkshake", 5, "morango", 3, 500, false, true);
 			alimentoP3.add(m2);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
@@ -70,18 +60,14 @@ public class PedidoTest {
 		
 		
 		try {
-			Milkshake m3 = new Milkshake(20, "nutella", 1, 1000);
-			m3.setEspecial(true);
-			m3.setChantily(false);
+			Milkshake m3 = new Milkshake("Milkshake", 5, "morango", 3, 500, false, true);
 			alimentoP1.add(m3);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
 		}
 		
 		try {
-			Sorvete s1 = new Sorvete(5, "misto", 1, "casquinha");
-			s1.setTamanho(300);
-			s1.setTooping(true);
+			Sorvete s1 = new Sorvete("Sorvete", 5, "misto", 1, "casquinha", 300, true);
 			alimentoP3.add(s1);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
@@ -89,9 +75,7 @@ public class PedidoTest {
 		
 		
 		try {
-			Sorvete s2 = new Sorvete(8, "natagoiaba", 3, "cascao");
-			s2.setTamanho(500);
-			s2.setTooping(true);
+			Sorvete s2 = new Sorvete("Sorvete", 5, "misto", 1, "casquinha", 300, true);
 			alimentoP2.add(s2);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());
@@ -99,9 +83,7 @@ public class PedidoTest {
 		
 		
 		try {
-			Sorvete s3 = new Sorvete(8, "acaibanana", 12, "cascao");
-			s3.setTamanho(500);
-			s3.setTooping(false);
+			Sorvete s3 = new Sorvete("Sorvete", 5, "misto", 1, "casquinha", 300, true);
 			alimentoP1.add(s3);
 		} catch (PrecoZeradoException e) {
 			System.out.println("[ERRO}" + e.getMessage());

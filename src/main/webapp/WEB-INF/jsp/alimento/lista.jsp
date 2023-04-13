@@ -31,9 +31,10 @@
 			  <thead>
 			    <tr>
 			      <th>ID</th>
-			      <th>preco</th>
-			      <th>sabor</th>
-			      <th>quantidade</th>
+			      <th>Nome</th>
+			      <th>Preco</th>
+			      <th>Sabor</th>
+			      <th>Quantidade</th>
 			      <th></th>
 			    </tr>
 			  </thead>
@@ -42,6 +43,7 @@
 			  	<c:forEach var="p" items="${alimentos}">
 				    <tr>
 				      <td>${p.id}</td>
+				      <td>${p.nome}</td>
 				      <td>${p.preco}</td>
 				      <td>${p.sabor}</td>
 				      <td>${p.quantidade}</td>

@@ -35,6 +35,7 @@
 			  <thead>
 			    <tr>
 			      <th>ID</th>
+			      <th>Nome</th>
 			      <th>Tipo</th>
 			      <th>Sabor</th>
 			      <th>Tamanho</th>
@@ -49,6 +50,7 @@
 			  	<c:forEach var="s" items="${sorvetes}">
 				    <tr>
 				      <td>${s.id}</td>
+				      <td>${s.nome}</td>
 				      <td>${s.tipo}</td>
 				      <td>${s.sabor}</td>
 				      <td>${s.tamanho}</td>

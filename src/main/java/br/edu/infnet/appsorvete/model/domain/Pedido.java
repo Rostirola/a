@@ -27,24 +27,7 @@ public class Pedido {
 	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
 	private List<Alimento> alimentos;
 
-	public Pedido() {
-	}
-
-	public String getComentario() {
-		return comentario;
-	}
-
-	public void setComentario(String comentario) {
-		this.comentario = comentario;
-	}
-
-	public boolean isDinheiro() {
-		return dinheiro;
-	}
-
-	public void setDinheiro(boolean dinheiro) {
-		this.dinheiro = dinheiro;
-	}
+	public Pedido() {}
 	
 	public void imprimir() {
 		System.out.println("Pedido: " + this);
@@ -52,13 +35,14 @@ public class Pedido {
 		System.out.println("Cliente: " + cliente);
 		System.out.println("Alimentos: ");
 		for(Alimento a : alimentos) {
-		System.out.println(" - " + a.getSabor());
+		System.out.println(" - " + a.getNome());
 		}
 	}
-	
+
 	public String obterLinha() {
-		
-		return this.getComentario() + ";" + this.getCliente() + ";" + this.getAlimentos().size() + "\r\n";
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("MM/yyyy");
+
+		return this.getData().format(formato)+";" + this.getComentario() + ";" + this.getCliente() + ";" + this.getAlimentos().size() + "\r\n";
 	}
 
 	public Pedido(Cliente cliente, List<Alimento> alimentos) throws PedidoSemSolicitanteException, PedidoSemAlimentoException {
@@ -76,49 +60,53 @@ public class Pedido {
 
 		data = LocalDateTime.now();
 	}
-	
-	@Override
-	public String toString() {
-		
-		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-
-		return String.format("%s;%s;%s", comentario, dinheiro ? "dinheiro" : "cartao", data.format(formato));
-		
-		 
-	}
 
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-
+	public String getComentario() {
+		return comentario;
+	}
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
+	}
+	public boolean isDinheiro() {
+		return dinheiro;
+	}
+	public void setDinheiro(boolean dinheiro) {
+		this.dinheiro = dinheiro;
+	}
+	public LocalDateTime getData() {
+		return data;
+	}
+	public void setData(LocalDateTime data) {this.data = data;}
 	public Usuario getUsuario() {
 		return usuario;
 	}
-
-
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	public Cliente getCliente() {
 		return cliente;
 	}
-
+	public void setCliente(Cliente cliente) { this.cliente = cliente; }
 	public List<Alimento> getAlimentos() {
 		return alimentos;
-	}
-
-	public LocalDateTime getData() {
-		return data;
 	}
 	public void setAlimentos(List<Alimento> alimentos) {
 		this.alimentos = alimentos;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
+	@Override
+	public String toString() {
 
-	public void setCliente(Cliente cliente) { this.cliente = cliente; }
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+		return String.format("%s;%s;%s", comentario, dinheiro ? "dinheiro" : "cartao", data.format(formato));
+
+
+	}
 }

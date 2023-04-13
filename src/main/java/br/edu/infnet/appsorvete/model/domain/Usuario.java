@@ -33,8 +33,7 @@ public class Usuario {
 	@JoinColumn(name = "idEndereco")
 	private Endereco endereco;
 	
-	public Usuario() {
-	}
+	public Usuario() {}
 	
 	public Usuario(String email, String senha) {
 		this();
@@ -46,23 +45,6 @@ public class Usuario {
 		this(email, senha);
 		this.setNome(nome);
 	}
-
-	@Override
-	public String toString() {
-
-		return String.format(
-				"O usuario %s tem as credenciais %s e %s, %d anos e ganha R$%.2f. "
-				+ "O um usuario do tipo %s, atua no setor %s e tem %d caracteresticas", 
-				nome,
-				email,
-				senha,
-				idade,
-				salario,
-				tipo,
-				setor,
-				caracteristicas.length
-			);
-	}
 	
 	public Integer getId() {
 		return id;
@@ -70,7 +52,6 @@ public class Usuario {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -131,28 +112,39 @@ public class Usuario {
 	public void setAlimentos(List<Alimento> alimentos) {
 		this.alimentos = alimentos;
 	}
-
 	public List<Pedido> getPedidos() {
 		return pedidos;
 	}
-
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
-
 	public Endereco getEndereco() {
 		return endereco;
 	}
-
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-
 	public boolean isFunc() {
 		return func;
 	}
-
 	public void setFunc(boolean func) {
 		this.func = func;
+	}
+
+	@Override
+	public String toString() {
+
+		return String.format(
+				"O usuario %s tem as credenciais %s e %s, %d anos e ganha R$%.2f. "
+						+ "O um usuario do tipo %s, atua no setor %s e tem %d caracteresticas",
+				nome,
+				email,
+				senha,
+				idade,
+				salario,
+				tipo,
+				setor,
+				caracteristicas.length
+		);
 	}
 }

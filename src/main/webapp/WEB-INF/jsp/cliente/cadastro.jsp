@@ -26,11 +26,14 @@
 			</div>
 
 			<div class="form-group">
+                <label>Idade:</label>
+                <input type="text" name="idade" value="21" class="form-control">
+            </div>
+
+			<div class="form-group">
 				<label>E-mail:</label>
 				<input type="email" name="email" value="juanrostirola@gmail.com" class="form-control">
 			</div>
-
-			<c:import url="/WEB-INF/jsp/endereco/cadastro.jsp"/>
 
 			<button type="submit">Cadastrar</button>
 		</form>

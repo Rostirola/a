@@ -28,8 +28,12 @@ public class ClienteService {
 	public Collection<Cliente> obterLista(){
 		return (Collection<Cliente>) clienteRepository.findAll();
 	}
-	
-	public Collection<Cliente> obterLista(Usuario usuario){
-		return clienteRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "nome"));
+
+	public Collection<Cliente> obterLista( Usuario usuario ){
+		return (Collection<Cliente>) clienteRepository.obterLista(usuario.getId(), Sort.by(Direction.ASC, "nome"));
 	}
+	public Cliente obterPorId(Integer id) {
+		return clienteRepository.findById(id).orElse(null);
+	}
+
 }

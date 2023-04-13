@@ -1,5 +1,6 @@
 package br.edu.infnet.appsorvete.controller;
 
+import br.edu.infnet.appsorvete.model.domain.Endereco;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,13 +49,15 @@ public class PedidoController {
 	}
 	
 	@PostMapping(value = "/pedido/incluir")
-	public String incluir(Pedido pedido, @SessionAttribute("usuario") Usuario usuario) {
-		
+	public String incluir(Pedido pedido, Endereco endereco, @SessionAttribute("usuario") Usuario usuario) {
+
+		usuario.setEndereco(endereco);
+
 		pedido.setUsuario(usuario);
 
 		pedidoService.incluir(pedido);
 		
-		msg = "A inclusão do pedido "+pedido.getId()+" foi realizada com sucesso!!!";
+		msg = "A inclusão do pedido "+ pedido.getId() +" foi realizada com sucesso!!!";
 		
 		return "redirect:/pedido/lista";
 	}
@@ -66,7 +69,7 @@ public class PedidoController {
 		
 		pedidoService.excluir(id);
 		
-		msg = "A exclusão do pedido "+pedido.getId()+" foi realizada com sucesso!!!";
+		msg = "A exclusão do pedido "+ pedido.getId() +" foi realizada com sucesso!!!";
 
 		return "redirect:/pedido/lista";
 	}

@@ -31,18 +31,13 @@
 			      </label>
 			    </div>
 			</div>
-			
-<!-- 			<div class="form-group"> -->
-<!-- 				<label>Data:</label> 	 -->
-<!-- 				<input type="text" name="data" value="16/03/2023" class="form-control"> -->
-<!-- 			</div> -->
 
 			<div class="form-group">
 				<c:if test="${not empty clientes}">
 					<label>Cliente:</label>
 					<select name="cliente" class="form-control">
-						<c:forEach var="s" items="${clientes}">
-							<option value="${s.id}">${s.nome}</option>
+						<c:forEach var="c" items="${clientes}">
+							<option value="${c.id}">${c.nome}</option>
 						</c:forEach>
 					</select>
 				</c:if>
@@ -55,10 +50,10 @@
 			<div class="form-group">
 				<c:if test="${not empty alimentos}">
 					<label>Alimentos:</label>
-				    <c:forEach var="p" items="${alimentos}">
+				    <c:forEach var="a" items="${alimentos}">
 				    <div class="form-check">
 				      <label class="form-check-label">
-			        		<input type="checkbox" name="alimentos" value="${p.id}" class="form-check-input"> ${p.sabor}
+			        		<input type="checkbox" name="alimentos" value="${a.id}" class="form-check-input"> ${a.nome} ${a.sabor}
 				      </label>
 				    </div>
 				    </c:forEach>

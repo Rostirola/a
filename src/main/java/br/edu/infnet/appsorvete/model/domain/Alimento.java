@@ -25,6 +25,7 @@ public abstract class Alimento {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
 	private String nome;
 	private float preco;
 	private String sabor;
@@ -60,7 +61,7 @@ public abstract class Alimento {
 	}
 	public void 		setId(Integer id) { this.id = id; }
 	public String		getNome() {return nome;}
-	public void 		setNome(String tipo) { this.nome = nome; }
+	public void 		setNome(String nome) { this.nome = nome; }
 	public float		getPreco() {
 		return preco;
 	}
@@ -68,11 +69,11 @@ public abstract class Alimento {
 	public String 		getSabor() {
 		return sabor;
 	}
-	public void  		setSabor() { this.sabor = sabor; }
+	public void  		setSabor(String sabor) { this.sabor = sabor; }
 	public int 			getQuantidade() {
 		return quantidade;
 	}
-	public void			setQuantidade() { this.quantidade = quantidade; }
+	public void			setQuantidade(int quantidade) { this.quantidade = quantidade; }
 	public Usuario 		getUsuario() {
 		return usuario;
 	}

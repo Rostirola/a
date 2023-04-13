@@ -9,9 +9,7 @@ public class MilkshakeTest {
 	public static void main(String[] args) {
 
 		try {
-			Milkshake m1 = new Milkshake(0, "morango", 3, 500);
-			m1.setEspecial(false);
-			m1.setChantily(true);
+			Milkshake m1 = new Milkshake("Milkshake", 0, "morango", 3, 500, false, true);
 			System.out.println(m1);
 			System.out.println("Valor da Venda = R$" + m1.calcularValorVenda());
 		} catch (PrecoZeradoException | TamanhoMilkshakeInvalidoException e) {
@@ -19,9 +17,7 @@ public class MilkshakeTest {
 		}
 
 		try {
-			Milkshake m2 = new Milkshake(-8, "napolitano", 5, 300);
-			m2.setEspecial(false);
-			m2.setChantily(true);
+			Milkshake m2 = new Milkshake("Milkshake", -3, "morango", 3, 500, false, true);
 			System.out.println(m2);
 			System.out.println("Valor da Venda = R$" + m2.calcularValorVenda());
 		} catch (PrecoZeradoException | TamanhoMilkshakeInvalidoException e) {
@@ -29,7 +25,7 @@ public class MilkshakeTest {
 		}
 
 		try {
-			Milkshake m3 = new Milkshake(20, "nutella", 1, 1000);
+			Milkshake m3 = new Milkshake("Milkshake", 20, "nutela", 3, 500, true, true);
 			m3.setEspecial(true);
 			m3.setChantily(false);
 			System.out.println(m3);

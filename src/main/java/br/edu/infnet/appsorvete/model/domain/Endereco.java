@@ -18,20 +18,7 @@ public class Endereco {
 	private String bairro;
 	private String localidade;
 	private String uf;
-	
-	@Override
-	public String toString() {
-		
-		return String.format("%s, $s - %s - %s - %s, %s", 
-				logradouro,
-				complemento,
-				bairro,
-				localidade,
-				cep,
-				uf
-			);
-	}
-		
+
 	public Integer getId() {
 		return id;
 	}
@@ -73,5 +60,18 @@ public class Endereco {
 	}
 	public void setUf(String uf) {
 		this.uf = uf;
+	}
+
+	@Override
+	public String toString() {
+
+		return String.format("%s, $s - %s - %s - %s, %s",
+				logradouro,
+				complemento,
+				bairro,
+				localidade,
+				cep,
+				uf
+		);
 	}
 }

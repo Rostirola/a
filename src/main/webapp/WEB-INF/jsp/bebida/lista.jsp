@@ -20,7 +20,7 @@
 			</div>		
 		</c:if>
 
-		<form action="/bebida/cadastro">
+		<form action="/bebida">
 			<input type="submit" value="novo"/>
 		</form>
 		
@@ -35,6 +35,7 @@
 			  <thead>
 			    <tr>
 			      <th>ID</th>
+			      <th>Nome</th>
 			      <th>Marca</th>
 			      <th>Sabor</th>
 			      <th>Tamanho</th>
@@ -46,16 +47,17 @@
 			  </thead>
 			  <tbody>
 
-			  	<c:forEach var="s" items="${bebidas}">
+			  	<c:forEach var="b" items="${bebidas}">
 				    <tr>
-				      <td>${s.id}</td>
-				      <td>${s.marca}</td>
-				      <td>${s.sabor}</td>
-				      <td>${s.tamanho}</td>
-				      <td>${s.alcoolico}</td>
-                      <td>${s.preco}</td>
-					  <td>${s.quantidade}</td>
-				      <td><a href="/bebida/${s.id}/excluir">excluir</a></td>
+				      <td>${b.id}</td>
+				      <td>${b.nome}</td>
+				      <td>${b.marca}</td>
+				      <td>${b.sabor}</td>
+				      <td>${b.tamanho}</td>
+				      <td>${b.alcoolico}</td>
+                      <td>${b.preco}</td>
+					  <td>${b.quantidade}</td>
+				      <td><a href="/bebida/${b.id}/excluir">excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>

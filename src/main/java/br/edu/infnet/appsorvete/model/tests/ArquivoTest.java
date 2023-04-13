@@ -51,7 +51,7 @@ public class ArquivoTest {
 							pedido = new Pedido(new Cliente(campos[3], (campos[4]),
 									(campos[5]), campos[6]), alimentos);
 							pedido.setComentario(campos[1]);
-							pedido.setDinheiro(Boolean.valueOf(campos[2]));
+							pedido.setDinheiro(Boolean.parseBoolean(campos[2]));
 						} catch (ClienteInvalidoException | PedidoSemSolicitanteException
 								| PedidoSemAlimentoException e) {
 							System.out.println("[ERRO]" + e.getMessage());
@@ -60,10 +60,13 @@ public class ArquivoTest {
 						break;
 					case "S":
 						try {
-							Sorvete sorvete = new Sorvete(Float.valueOf(campos[1]), campos[2],
-									Integer.valueOf(campos[3]), campos[4]);
-							sorvete.setTamanho(Integer.valueOf(campos[5]));
-							sorvete.setTooping(Boolean.valueOf(campos[6]));
+							Sorvete sorvete = new Sorvete(campos[1],
+									Float.parseFloat(campos[2]),
+									campos[3],
+									Integer.parseInt(campos[4]),
+									campos[5],
+									Integer.parseInt(campos[6]),
+									Boolean.parseBoolean(campos[7]));
 							alimentos.add(sorvete);
 						} catch (PrecoZeradoException e) {
 							System.out.println("[ERRO}" + e.getMessage());
@@ -72,10 +75,13 @@ public class ArquivoTest {
 						break;
 					case "M":
 						try {
-							Milkshake milkshake = new Milkshake(Float.valueOf(campos[1]), campos[2],
-									Integer.valueOf(campos[3]), Integer.valueOf(campos[4]));
-							milkshake.setEspecial(Boolean.valueOf(campos[5]));
-							milkshake.setChantily(Boolean.valueOf(campos[6]));
+							Milkshake milkshake = new Milkshake(campos[1],
+									Float.parseFloat(campos[2]),
+									campos[3],
+									Integer.parseInt(campos[4]),
+									Integer.parseInt(campos[5]),
+									Boolean.parseBoolean(campos[6]),
+									Boolean.parseBoolean(campos[7]));
 							alimentos.add(milkshake);
 						} catch (PrecoZeradoException e) {
 							System.out.println("[ERRO}" + e.getMessage());
@@ -83,10 +89,13 @@ public class ArquivoTest {
 						break;
 					case "B":
 						try {
-							Bebida bebida = new Bebida(Float.valueOf(campos[1]), campos[2], Integer.valueOf(campos[3]),
-									campos[4]);
-							bebida.setTamanho(Integer.valueOf(campos[5]));
-							bebida.setAlcoolico(Boolean.valueOf(campos[6]));
+							Bebida bebida = new Bebida(campos[1],
+									Float.parseFloat(campos[2]),
+									campos[3],
+									Integer.parseInt(campos[4]),
+									campos[5],
+									Float.parseFloat(campos[6]),
+									Boolean.parseBoolean(campos[7]));
 							alimentos.add(bebida);
 						} catch (PrecoZeradoException e) {
 							System.out.println("[ERRO}" + e.getMessage());

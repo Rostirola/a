@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appsorvete.model.service.PedidoService;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,27 +26,29 @@ public class PedidoLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        Pedido pedido = new Pedido();
+        pedido.setComentario("Pedido um");
+        pedido.setDinheiro(true);
+        pedido.setData(LocalDateTime.now());
+
         Usuario usuario = new Usuario();
         usuario.setId(1);
+
+        pedido.setUsuario(usuario);
 
         Cliente cliente = new Cliente();
         cliente.setId(1);
 
-        Pedido pedido = new Pedido();
-
-        pedido.setDinheiro(true);
-        pedido.setComentario("Pedido um");
-        pedido.setUsuario(usuario);
         pedido.setCliente(cliente);
 
         Bebida bebida = new Bebida();
-        bebida.setId(1);
+        bebida.setId(5);
 
         Milkshake milkshake = new Milkshake();
-        milkshake.setId(1);
+        milkshake.setId(5);
 
         Sorvete sorvete = new Sorvete();
-        sorvete.setId(1);
+        sorvete.setId(5);
 
         List<Alimento> alimentos = new ArrayList<Alimento>();
         alimentos.add(bebida);
@@ -53,8 +56,6 @@ public class PedidoLoader implements ApplicationRunner {
         alimentos.add(sorvete);
 
         pedido.setAlimentos(alimentos);
-
-
 
     }
 }

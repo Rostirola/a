@@ -1,5 +1,6 @@
 package br.edu.infnet.appsorvete;
  
+import br.edu.infnet.appsorvete.model.domain.Bebida;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -12,6 +13,10 @@ import br.edu.infnet.appsorvete.model.exceptions.PrecoZeradoException;
 import br.edu.infnet.appsorvete.model.exceptions.TamanhoSorveteInvalidoException;
 import br.edu.infnet.appsorvete.model.service.SorveteService;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 @Order(3)
 @Component
 public class SorveteLoader implements ApplicationRunner {
@@ -21,56 +26,51 @@ public class SorveteLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		
-		Usuario userFunc = new Usuario();
-		userFunc.setId(1);
 
 		try {
-			Sorvete sorvete = new Sorvete(5, "Morango", 1, "Casquinha");
-			sorvete.setTooping(false);
-			sorvete.setTamanho(500);
-			sorvete.setUsuario(userFunc);
-			System.out.println(sorvete);
-			System.out.println("Valor de Venda = R$" + sorvete.calcularValorVenda());
-	
-			sorveteService.incluir(sorvete);
-		} catch (PrecoZeradoException | TamanhoSorveteInvalidoException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
-	
-		try {
-			Sorvete sorvete = new Sorvete(5, "Morango", 1, "Casquinha");
-			sorvete.setTooping(false);
-			sorvete.setTamanho(500);
-			sorvete.setUsuario(userFunc);
-			System.out.println(sorvete);
-			System.out.println("Valor de Venda = R$" + sorvete.calcularValorVenda());
-	
-			sorveteService.incluir(sorvete);
-		} catch (PrecoZeradoException | TamanhoSorveteInvalidoException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
-	
-		try {
-			Sorvete sorvete = new Sorvete(5, "Morango", 1, "Casquinha");
-			sorvete.setTooping(false);
-			sorvete.setTamanho(500);
-			System.out.println(sorvete);
-			sorvete.setUsuario(userFunc);
-			System.out.println("Valor de Venda = R$" + sorvete.calcularValorVenda());
-	
-			sorveteService.incluir(sorvete);
-		} catch (PrecoZeradoException | TamanhoSorveteInvalidoException e) {
-			System.out.println("[ERRO] " + e.getMessage());
-		}
-		
-		System.out.println("Listagem de Sorvetes:");
-		for(Sorvete sorvete : sorveteService.obterLista()) {
-			System.out.printf("%d - %s - %s\n", 
-					sorvete.getId(),
-					sorvete.getSabor(),
-					sorvete.getTipo()
-			);
+			String arq = "sorvetes.txt";
+
+			try {
+				FileReader fileR = new FileReader(arq);
+				BufferedReader leitura = new BufferedReader(fileR);
+
+				String linha = leitura.readLine();
+				String[] campos = null;
+
+				while(linha != null) {
+
+					campos = linha.split(";");
+
+					Sorvete sorvete = new Sorvete(
+							campos[0],
+							Float.parseFloat(campos[1]),
+							campos[2],
+							Integer.parseInt(campos[3]),
+							campos[4],
+							Integer.parseInt(campos[5]),
+							Boolean.parseBoolean(campos[6])
+					);
+
+					Usuario usuario = new Usuario();
+					usuario.setId(1);
+
+					sorvete.setUsuario(usuario);
+
+					sorveteService.incluir(sorvete);
+
+					System.out.println("A inclusão do cliente "+sorvete.getNome()+" foi realizada com sucesso!!!");
+
+					linha = leitura.readLine();
+				}
+
+				leitura.close();
+				fileR.close();
+			} catch (IOException e) {
+				System.out.println("[ERRO] " + e.getMessage());
+			}
+
+		} finally {
+			System.out.println("Processamento realizado com sucesso!!!");
 		}
 	}
 }

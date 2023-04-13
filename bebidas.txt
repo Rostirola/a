@@ -1,0 +1,3 @@
+Bebida;5;cola;1;coca;500;false;
+Bebida;5;limao;1;sprite;500;false;
+Bebida;5;laranja;1;fanta;500;false;

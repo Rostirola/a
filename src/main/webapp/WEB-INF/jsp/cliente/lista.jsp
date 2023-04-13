@@ -37,21 +37,25 @@
 			      <th>ID</th>
 			      <th>Nome</th>
 			      <th>CPF</th>
+			      <th>Idade</th>
 			      <th>E-mail</th>
 			      <th>Usuário</th>
+			      <th>Endereco</th>
 			      <th></th>
 			    </tr>
 			  </thead>
 			  <tbody>
 
-			  	<c:forEach var="s" items="${clientes}">
+			  	<c:forEach var="c" items="${clientes}">
 				    <tr>
-				      <td>${s.id}</td>
-				      <td>${s.nome}</td>
-				      <td>${s.cpf}</td>
-				      <td>${s.email}</td>
-				      <td>${s.usuario.nome}</td>
-				      <td><a href="/cliente/${s.id}/excluir">excluir</a></td>
+				      <td>${c.id}</td>
+				      <td>${c.nome}</td>
+				      <td>${c.cpf}</td>
+				      <td>${c.idade}</td>
+				      <td>${c.email}</td>
+				      <td>${c.usuario.nome}</td>
+				      <td>${c.endereco.cep}</td>
+				      <td><a href="/cliente/${c.id}/excluir">excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>

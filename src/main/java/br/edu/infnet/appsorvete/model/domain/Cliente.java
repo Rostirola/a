@@ -29,8 +29,7 @@ public class Cliente {
 	@JoinColumn(name = "idEndereco")
 	private Endereco endereco;
 	
-	public Cliente() {
-	}
+	public Cliente() {}
 	
 	public Cliente(String nome, String cpf, String idade, String email) throws ClienteInvalidoException {
 
@@ -54,10 +53,29 @@ public class Cliente {
 		this.idade = idade;
 		this.email = email;
 	}
-	
+
+	public Integer	getId() {
+		return id;
+	}
+	public void		setId(Integer id) {
+		this.id = id;
+	}
+	public String	getNome() { return nome; }
+	public void		setNome(String nome) {this.nome = nome;}
+	public String	getCpf() { return cpf; }
+	public void		setCpf(String cpf) {this.cpf = cpf;}
+	public String	getIdade() { return idade; }
+	public void		setIdade(String idade) {this.idade = idade;}
+	public String	getEmail() { return email; }
+	public void		setEmail(String email) {this.email = email;}
+	public Usuario	getUsuario() { return usuario; }
+	public void		setUsuario(Usuario usuario) { this.usuario = usuario; }
+	public Endereco	getEndereco() { return endereco; }
+	public void		setEndereco(Endereco endereco) { this.endereco = endereco; }
+
 	@Override
 	public String toString() {
-		
+
 		StringBuilder sb = new StringBuilder();
 		sb.append(nome);
 		sb.append(";");
@@ -66,47 +84,7 @@ public class Cliente {
 		sb.append(idade);
 		sb.append(";");
 		sb.append(email);
-		
+
 		return sb.toString();
-	}	
-	public Integer getId() {
-		return id;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getIdade() {
-		return idade;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public Usuario getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
-	
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-	
 }

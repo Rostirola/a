@@ -35,9 +35,10 @@
 			  <thead>
 			    <tr>
 			      <th>ID</th>
-			      <th>Especial</th>
+			      <th>Nome</th>
 			      <th>Sabor</th>
 			      <th>Tamanho</th>
+			      <th>Especial</th>
 			      <th>Chantily</th>
 			      <th>Preço</th>
 				  <th>Quantidade</th>
@@ -46,16 +47,17 @@
 			  </thead>
 			  <tbody>
 
-			  	<c:forEach var="s" items="${milkshakes}">
+			  	<c:forEach var="m" items="${milkshakes}">
 				    <tr>
-				      <td>${s.id}</td>
-				      <td>${s.especial}</td>
-				      <td>${s.sabor}</td>
-				      <td>${s.tamanho}</td>
-				      <td>${s.chantily}</td>
-                      <td>${s.preco}</td>
-					  <td>${s.quantidade}</td>
-				      <td><a href="/milkshake/${s.id}/excluir">excluir</a></td>
+				      <td>${m.id}</td>
+				      <td>${m.nome}</td>
+				      <td>${m.sabor}</td>
+				      <td>${m.tamanho}</td>
+				      <td>${m.especial}</td>
+				      <td>${m.chantily}</td>
+                      <td>${m.preco}</td>
+					  <td>${m.quantidade}</td>
+				      <td><a href="/milkshake/${m.id}/excluir">excluir</a></td>
 				    </tr>
 			    </c:forEach>
 			  </tbody>

@@ -2,7 +2,9 @@ package br.edu.infnet.appsorvete.model.service;
 
 import java.util.Collection;
 
+import br.edu.infnet.appsorvete.model.domain.Bebida;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
  
 import br.edu.infnet.appsorvete.model.domain.Milkshake;
@@ -28,7 +30,7 @@ public class MilkshakeService {
 	}
 	
 	public Collection<Milkshake> obterLista(Usuario usuario){
-		return milkshakeRepository.obterLista(usuario.getId());
+		return (Collection<Milkshake>) milkshakeRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC, "nome"));
 	}
 
 	public Milkshake obterPorId(Integer id) {

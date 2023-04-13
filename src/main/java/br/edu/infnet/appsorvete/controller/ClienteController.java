@@ -57,12 +57,14 @@ public class ClienteController {
 	@GetMapping(value = "/cliente/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
+		Cliente cliente = clienteService.obterPorId(id);
+
 		try {
 			clienteService.excluir(id);
 
-			msg = "A exclusão do cliente ("+id+") foi realizada com sucesso!!!";
+			msg = "A exclusão do cliente "+ cliente.getNome() +" foi realizada com sucesso!!!";
 		} catch (Exception e) {
-			msg = "Impossível realizar a exclusão do cliente ("+id+")!!!";
+			msg = "Impossível realizar a exclusão do cliente"+ cliente.getNome() +"!!!";
 		}
 
 		return "redirect:/cliente/lista";

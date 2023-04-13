@@ -1,5 +1,7 @@
 package br.edu.infnet.appsorvete.controller;
 
+import br.edu.infnet.appsorvete.model.domain.Cliente;
+import br.edu.infnet.appsorvete.model.domain.Endereco;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +36,10 @@ public class UsuarioController {
 	}
 
     @PostMapping(value = "/usuario/incluir")
-    public String incluir(Usuario usuario) {
+    public String incluir(Usuario usuario, Endereco endereco) {
+        System.out.println("Inclusao realizada com sucesso!!!" + usuario);
+
+        usuario.setEndereco(endereco);
 
         usuarioService.incluir(usuario);
 
@@ -45,10 +50,12 @@ public class UsuarioController {
 
     @GetMapping(value = "/usuario/{id}/excluir")
         public String excluir(@PathVariable Integer id) {
+
+        Usuario usuario = usuarioService.obterPorId(id);
             
             usuarioService.excluir(id);
 
-            msg = "A exclusão do usuário foi realizada com sucesso!";
+            msg = "A exclusão do usuário" + usuario.getNome() + " foi realizada com sucesso!";
 
             return "redirect:/usuario/lista";
         }
