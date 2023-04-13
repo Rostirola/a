@@ -1,9 +1,6 @@
 package br.edu.infnet.appsorvete;
 
 import br.edu.infnet.appsorvete.model.domain.*;
-import br.edu.infnet.appsorvete.model.exceptions.ClienteInvalidoException;
-import br.edu.infnet.appsorvete.model.exceptions.PedidoSemAlimentoException;
-import br.edu.infnet.appsorvete.model.exceptions.PedidoSemSolicitanteException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Order(6)
+@Order(7)
 @Component
 public class PedidoLoader implements ApplicationRunner {
 
@@ -26,20 +23,14 @@ public class PedidoLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        Pedido pedido = new Pedido();
-        pedido.setComentario("Pedido um");
-        pedido.setDinheiro(true);
-        pedido.setData(LocalDateTime.now());
-
         Usuario usuario = new Usuario();
         usuario.setId(1);
 
-        pedido.setUsuario(usuario);
+        Pedido pedido = new Pedido();
 
-        Cliente cliente = new Cliente();
-        cliente.setId(1);
-
-        pedido.setCliente(cliente);
+        pedido.setComentario("Pedido um");
+        pedido.setDinheiro(true);
+        pedido.setData(LocalDateTime.now());
 
         Bebida bebida = new Bebida();
         bebida.setId(5);
@@ -57,5 +48,13 @@ public class PedidoLoader implements ApplicationRunner {
 
         pedido.setAlimentos(alimentos);
 
+        Cliente cliente = new Cliente();
+        cliente.setId(1);
+
+        pedido.setCliente(cliente);
+
+        pedido.setUsuario(usuario);
+
+        pedidoService.incluir(pedido);
     }
 }

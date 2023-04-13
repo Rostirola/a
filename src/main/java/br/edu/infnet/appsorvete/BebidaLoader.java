@@ -17,7 +17,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-@Order(5)
+@Order(6)
 @Component
 public class BebidaLoader implements ApplicationRunner {
 

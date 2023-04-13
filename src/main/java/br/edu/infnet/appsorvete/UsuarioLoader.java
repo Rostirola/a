@@ -15,7 +15,7 @@ import br.edu.infnet.appsorvete.model.service.UsuarioService;
 import java.util.ArrayList;
 import java.util.List;
 
-@Order(1)
+@Order(2)
 @Component
 public class UsuarioLoader implements ApplicationRunner {
 
@@ -31,6 +31,8 @@ public class UsuarioLoader implements ApplicationRunner {
 		userFunc.setSetor("Producao");
 		userFunc.setTipo("Func");
 		userFunc.setFunc(true);
+		userFunc.setCaracteristica("Estoque");
+		
 
 		usuarioService.incluir(userFunc);
 		
@@ -42,6 +44,7 @@ public class UsuarioLoader implements ApplicationRunner {
 			usuario.setSalario(i*100);
 			usuario.setSetor("Presidência " + i);
 			usuario.setTipo("Func " + i);
+			usuario.setCaracteristica("Estoque" + i);
 
 			usuarioService.incluir(usuario);
 			

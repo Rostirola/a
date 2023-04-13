@@ -1,5 +1,6 @@
 package br.edu.infnet.appsorvete.model.service;
 
+import br.edu.infnet.appsorvete.model.domain.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,9 @@ public class EnderecoService {
 	public Endereco buscaPorCep(String cep) {
 
 		return enderecoClient.buscaPorCep(cep);
+	}
+
+	public Endereco incluir(Endereco endereco) {
+		return enderecoClient.save(endereco);
 	}
 }

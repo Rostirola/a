@@ -15,6 +15,8 @@ import br.edu.infnet.appsorvete.model.service.AlimentoService;
 import br.edu.infnet.appsorvete.model.service.PedidoService;
 import br.edu.infnet.appsorvete.model.service.ClienteService;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class PedidoController {
 	
@@ -54,6 +56,8 @@ public class PedidoController {
 		usuario.setEndereco(endereco);
 
 		pedido.setUsuario(usuario);
+
+		pedido.setData(LocalDateTime.now());
 
 		pedidoService.incluir(pedido);
 		

@@ -14,7 +14,7 @@ public class Usuario {
 	private String nome;
 	private String senha;
 	private String email;
-	private String[] caracteristicas;
+	private String caracteristica;
 	private String tipo;
 	private String setor;
 	private int idade;
@@ -70,11 +70,11 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String[] getCaracteristicas() {
-		return caracteristicas;
+	public String getCaracteristica() {
+		return caracteristica;
 	}
-	public void setCaracteristicas(String[] caracteristicas) {
-		this.caracteristicas = caracteristicas;
+	public void setCaracteristica(String caracteristicas) {
+		this.caracteristica = caracteristicas;
 	}
 	public String getTipo() {
 		return tipo;
@@ -144,7 +144,7 @@ public class Usuario {
 				salario,
 				tipo,
 				setor,
-				caracteristicas.length
+				caracteristica
 		);
 	}
 }

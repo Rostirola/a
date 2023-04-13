@@ -50,20 +50,20 @@
 			</div>
 
 			<div class="form-group">
-				<label>Caracteristicas:</label>
+				<label>Caracteristica:</label>
 			    <div class="form-check">
 			      <label class="form-check-label">
-			        <input type="checkbox" name="caracteristicas" value="Ma" class="form-check-input" > Maquinario
+			        <input type="checkbox" name="caracteristica" value="Maquinario" class="form-check-input" > Maquinario
 			      </label>
 			    </div>
 			    <div class="form-check">
 			      <label class="form-check-label">
-			        <input type="checkbox" name="caracteristicas" value="Li" checked class="form-check-input"> Limpeza
+			        <input type="checkbox" name="caracteristica" value="Limpeza" checked class="form-check-input"> Limpeza
 			      </label>
 			    </div>
 			    <div class="form-check">
 			      <label class="form-check-label">
-		        		<input type="checkbox" name="caracteristicas" value="Es" class="form-check-input"> Estoque
+		        		<input type="checkbox" name="caracteristica" value="Estoque" class="form-check-input"> Estoque
 			      </label>
 			    </div>
 			</div>

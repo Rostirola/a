@@ -58,7 +58,7 @@
 							<td>${u.nome}</td>
 							<td>${u.senha}</td>
 							<td>${u.email}</td>
-							<td>${u.caracteristicas}</td>
+							<td>${u.caracteristica}</td>
 							<td>${u.tipo}</td>
 							<td>${u.setor}</td>
 							<td>${u.idade}</td>

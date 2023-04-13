@@ -3,7 +3,8 @@ package br.edu.infnet.appsorvete;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
- 
+
+import br.edu.infnet.appsorvete.model.domain.Endereco;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -14,7 +15,7 @@ import br.edu.infnet.appsorvete.model.domain.Cliente;
 import br.edu.infnet.appsorvete.model.domain.Usuario;
 import br.edu.infnet.appsorvete.model.service.ClienteService;
 
-@Order(2)
+@Order(3)
 @Component
 public class ClienteLoader implements ApplicationRunner {
 	
@@ -40,6 +41,8 @@ public class ClienteLoader implements ApplicationRunner {
 					
 					Usuario usuario = new Usuario();
 					usuario.setId(1);
+
+					Endereco endereco = new Endereco();
 					
 					Cliente cliente = new Cliente(
 							campos[0],

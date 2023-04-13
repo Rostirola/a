@@ -17,7 +17,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-@Order(3)
+@Order(4)
 @Component
 public class SorveteLoader implements ApplicationRunner {
 

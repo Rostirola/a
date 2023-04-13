@@ -17,7 +17,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-@Order(4)
+@Order(5)
 @Component
 public class MilkshakeLoader implements ApplicationRunner {
 
