@@ -42,10 +42,6 @@ public class ClienteController {
 	public String incluir(Cliente cliente, Endereco endereco, @SessionAttribute("usuario") Usuario usuario) {
 		
 		cliente.setUsuario(usuario);
-		
-		cliente.setEndereco(endereco);
-
-		System.out.println("Bairro do Cliente: " + cliente.getEndereco().getBairro());
 
 		clienteService.incluir(cliente);
 		

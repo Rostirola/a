@@ -19,17 +19,6 @@ public class Endereco {
 	private String localidade;
 	private String uf;
 
-	public Endereco() {};
-
-	public Endereco(String cep, String logradouro, String complemento, String bairro, String localidade, String uf) {
-		this.setCep(cep);
-		this.setLogradouro(logradouro);
-		this.setComplemento(complemento);
-		this.setBairro(bairro);
-		this.setLocalidade(localidade);
-		this.setUf(uf);
-	};
-
 	public Integer getId() {
 		return id;
 	}

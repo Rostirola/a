@@ -12,7 +12,7 @@
 
 <div class="form-group">
 	<label>Complemento:</label> 	
-	<input type="text" name="complemento" value="${endereco.complemento}" class="form-control">
+	<input type="text" name="complemento" value="Casa verde" class="form-control">
 </div>
 
 <div class="form-group">

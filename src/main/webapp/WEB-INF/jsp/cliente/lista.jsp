@@ -40,7 +40,6 @@
 			      <th>Idade</th>
 			      <th>E-mail</th>
 			      <th>Usuário</th>
-			      <th>Endereco</th>
 			      <th></th>
 			    </tr>
 			  </thead>
@@ -54,7 +53,6 @@
 				      <td>${c.idade}</td>
 				      <td>${c.email}</td>
 				      <td>${c.usuario.nome}</td>
-				      <td>${c.endereco.cep}</td>
 				      <td><a href="/cliente/${c.id}/excluir">excluir</a></td>
 				    </tr>
 			    </c:forEach>

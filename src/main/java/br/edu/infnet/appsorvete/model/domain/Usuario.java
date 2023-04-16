@@ -73,9 +73,7 @@ public class Usuario {
 	public String getCaracteristica() {
 		return caracteristica;
 	}
-	public void setCaracteristica(String caracteristicas) {
-		this.caracteristica = caracteristicas;
-	}
+	public void setCaracteristica(String caracteristica) { this.caracteristica = caracteristica; }
 	public String getTipo() {
 		return tipo;
 	}
@@ -136,7 +134,7 @@ public class Usuario {
 
 		return String.format(
 				"O usuario %s tem as credenciais %s e %s, %d anos e ganha R$%.2f. "
-						+ "O um usuario do tipo %s, atua no setor %s e tem %d caracteresticas",
+						+ "O um usuario do tipo %s, atua no setor %s e tem %s caracterestica",
 				nome,
 				email,
 				senha,

@@ -17,8 +17,4 @@ public class EnderecoService {
 
 		return enderecoClient.buscaPorCep(cep);
 	}
-
-	public Endereco incluir(Endereco endereco) {
-		return enderecoClient.save(endereco);
-	}
 }

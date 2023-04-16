@@ -72,17 +72,17 @@
 				<label>Tipo:</label>			
 				<div class="form-check">
 				  <label class="form-check-label">
-				    <input type="radio" name="tipo" value="G" class="form-check-input" > Gestor
+				    <input type="radio" name="tipo" value="Gestor" class="form-check-input" > Gestor
 				  </label>
 				</div>			
 				<div class="form-check">
 				  <label class="form-check-label">
-					<input type="radio" name="tipo" value="A" class="form-check-input"> Analista
+					<input type="radio" name="tipo" value="Analista" class="form-check-input"> Analista
 				  </label>
 				</div>			
 				<div class="form-check">
 				  <label class="form-check-label">
-				    <input type="radio" name="tipo" value="F" checked class="form-check-input"> Funcionario
+				    <input type="radio" name="tipo" value="Funcionario" checked class="form-check-input"> Funcionario
 				  </label>
 				</div>			
 			</div>
